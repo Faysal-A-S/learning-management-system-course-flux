@@ -1,0 +1,111 @@
+
+body{
+    background-color: 	#F0E68C;
+}
+.navbar{
+    background-color: #100b14 !important;
+    
+}
+.navbar-brand {
+    color: #FAFAD2 !important;
+}
+.nav-link {
+    color: #FAFAD2 !important;
+    
+}
+.navbar  .nav-item:hover .nav-link{ 
+    color: #f7dd4a !important;
+  }
+  .navbar-brand:hover{
+    color: #f7dd4a !important;
+  }
+  .dropdown-menu{
+      background-color: #161611;
+      
+  }
+  .dropdown-item{
+      color:#fddb1b ;
+  }
+  .dropdown-item:hover{
+    background-color: #F0E68C;
+    color: rgb(22, 20, 20) !important;
+    
+}
+  
+  
+#jumbotron{
+    background: url("../image/jb2.jpg") no-repeat !important;
+    height: 20rem;
+    color: rgb(18, 18, 19);
+}
+
+footer{
+  
+    background-color: rgb(17, 22, 22);
+   
+    padding-top: 5px;
+    color: 		#F0E68C;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+}
+footer a:hover{
+  color: #fddb1b !important;
+}
+
+.btn {
+    border: none !important;
+    border-radius: 0.3rem !important;
+    box-shadow: 0 8px 16px 0 rgba(81, 41, 97, 0.2), 0 6px 20px 0 rgba(213, 202, 218, 0.19);
+    cursor: pointer !important;
+    transition: none !important;
+    outline: none !important;
+    margin: 6px;
+  }
+  
+  .btn:hover {
+    background-color: rgb(106, 8, 131);
+    color: #ffffff;
+    transition: all 0.3s linear;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: none!important;
+    outline: 0;
+  }
+  #user{
+      font-weight: bolder;
+      color: rgb(152, 59, 189);
+  }
+  .scroll{
+      height:70%;
+      overflow-y: scroll;
+  }
+
+ 
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+ 
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+
+  ::-webkit-scrollbar-thumb {
+    background: 	#C5B358; 
+    border-radius: 10px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7c7e02; 
+  }
+
+  .card-body{
+    background-color: #d7caab;
+  }

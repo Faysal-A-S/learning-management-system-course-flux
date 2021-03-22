@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> 
+    <title>
+      {% block title %}
+        Home
+      {% endblock title %}
+    </title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'image/propic.png' %}" alt="logo" width="150" height="60" class="image-fluid">Course Flux</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             
+             
+              <li class="offset-1 nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Universities
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for ins in institute  %}
+                  <li><a class="dropdown-item " href="{% url 'department' ins.id %}">{{ins.name}}</a></li>
+                 
+                  {% endfor %}
+                  
+                  
+                </ul>
+              </li>
+
+
+             
+            </ul>
+                {% if user.is_authenticated %}
+                <p class="mt-2" style="color: aliceblue;">Logged in as <span id="user">{{user.username}}</span> </p>
+                <div>
+                   
+                    <a href="{% url 'logout'  %}" class="btn btn-primary">Logout</a>
+                </div>
+                {%  else  %}
+                <div>
+                    <a href="{% url 'login'  %}" class="btn btn-primary">Sign in</a>
+                    
+                    <a href="{% url 'register'  %}" class="btn btn-primary">Sign up</a>
+                </div>
+                {% endif %}
+                
+          </div>
+        </div>
+      </nav>
+      <div style="height: 500px" class="	scroll">
+      {% block content %}
+      <div class="jumbotron jumbotron-fluid " style="margin-top: -10px;">
+        <div  id="jumbotron">
+          <h1 class="display-4 fw-bold">First Ever University Based Online Platform in Bangladesh</h1>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="mt-2 row container">
+          <div class="offset-3 col-8 text-center" id="gred">
+            <h3>How it works?</h3>
+            <p><i class="fas fa-arrow-right"></i>Register</p>
+            <p><i class="fas fa-arrow-right"></i>Select your University</p>
+            <p><i class="fas fa-arrow-right"></i>Select course</p>
+            <p><i class="fas fa-arrow-right"></i>Enroll and start learning</p>
+          </div>
+
+      </div>
+      {% endblock content %}
+    </div>
+
+      <footer class="footer">
+        <div class="row justify-content-center">
+          <div class="col-auto" style="margin-left: 20px;">
+            <h5>Our Contact :</h5>
+            <address class="address">
+              Need to contact us? <br> Then mail or call us at: <br>
+          <i class="fa fa-phone fa-lg"></i>:01**********<br>
+          
+          <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:courseflux@gmail.com"  style="text-decoration:none;color:	#DAA520 ;">courseflux@gmail.com</a>
+       </address>
+        </div>
+        </div>
+        
+
+        <div class="row justify-content-center">             
+          <div class="col-auto">
+              <p>© Copyright 2021 Course Flux</p>
+          </div>
+     </div>
+      </footer>
+
+
+
+
+   <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

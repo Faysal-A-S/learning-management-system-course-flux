@@ -1,0 +1,23 @@
+
+#header{
+    background-color: #161515;
+}
+.module h2, .module caption, .inline-group h2 {
+    background-color: #161515;
+    
+}
+a.section:link{
+    color: #fddb1b ;
+}
+div.breadcrumbs {
+    background-color:#f0e796 ;
+    color: #0f1111 !important;
+}
+div.breadcrumbs a{
+   
+    color: #0f1111 !important;
+}
+div.breadcrumbs a:hover{
+   
+    color: #b8860b !important;
+}

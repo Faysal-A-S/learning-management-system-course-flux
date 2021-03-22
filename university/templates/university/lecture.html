@@ -1,0 +1,42 @@
+{% extends "home.html" %}
+{% block title %}
+  Lectures
+{% endblock title %}
+{% block content %}
+  
+<div class="container mt-5 ">
+  {% for lecture  in lectures %}
+    
+  {% if forloop.first %}
+  <div class="justify-content-center">
+      <h1>{{lecture.course}}</h1>
+  </div>
+  {% endif %}
+  {% endfor %}
+  
+  <div class="row">
+    {% for lecture in lectures  %}
+    {% if lecture.premium %}
+    {% if subscribe %}
+    <div class="col col-2" style="margin-right: -10px;">
+      <a class="btn btn-success" href="{% url 'video' lecture.id %}">{{lecture.lecture_name}}</a>
+    </div>
+    {% else %}
+    <div class="col col-2" style="margin-right: -10px;">
+      <button class="btn btn-success">{{lecture.lecture_name}} <span><i class="fas fa-star"></i></button>
+    </div>
+    {% endif %}
+    
+    {% else %}
+    <div class="col col-2" style="margin-right: -10px;">
+      <a class="btn btn-success" href="{% url 'video' lecture.id %}">{{lecture.lecture_name}}</a>
+    </div>
+    {% endif %}
+    {% endfor %}
+  
+</div>
+</div>
+ 
+    
+ 
+{% endblock content %}

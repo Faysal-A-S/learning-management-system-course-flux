@@ -1,0 +1,36 @@
+{% extends "home.html" %}
+{% block title %}
+  Courses
+{% endblock title %}
+{% block content %}
+  
+  
+   
+ <div class="container mt-5	 ">
+  
+    <div class="row  ">
+      {% for co in  course  %}
+      <div class=" col-4">
+        <div class="card " style="width: 19rem;">
+          <img class="card-img-top" src="{{co.image.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{co.name}}</h5>
+            <p class="card-text">{{co.description}}</p>
+            <a href="{% url 'lecture' co.id %}" class="btn btn-primary">Check</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+  
+     
+   
+
+ </div>
+
+  
+
+  
+    
+ 
+{% endblock content %}

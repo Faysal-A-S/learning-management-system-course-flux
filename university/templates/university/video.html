@@ -1,0 +1,55 @@
+{% extends "home.html" %}
+{% block title %}
+  Videos
+{% endblock title %}
+{% block content %}
+
+  
+   <div class="container row">
+    {% for vid in video  %}
+    <div class="offset-2 col-3 ">
+        <h1>{{vid.lecture_name}}</h1>
+       
+     <video src="{{vid.video.url}}" width="400" controls>{{vid.lecture_name}}</video>
+     <p>The lecture was created at :{{vid.created_at}}</p>
+    </div>
+    {% endfor %}
+
+
+
+
+
+    
+      <div class="offset-4 col-3 mt-5 ">
+         {% for lecture in lectures  %}
+         {% if lecture.premium %}
+         {% if subscribe %}
+         <div class="col-12">
+            <a class="btn btn-success btn-block" href="{% url 'video'  lecture.id  %}">{{lecture.lecture_name}}</a>
+         </div>
+         {% else %}
+        
+         <div class=" col-12">
+            <button class="btn btn-success" >{{lecture.lecture_name}} <span><i class="fas fa-star"></i>
+            </button>
+          </div>
+         {% endif %}
+           
+         {% else %}
+        
+          <div class="col-12">
+            <a class="btn btn-success btn-block" href="{% url 'video' lecture.id %}">{{lecture.lecture_name}}</a>
+          </div>
+          {% endif %}
+          
+        
+         {% endfor %}
+      </div>
+   
+   </div>
+   
+     
+
+
+  
+{% endblock content %}

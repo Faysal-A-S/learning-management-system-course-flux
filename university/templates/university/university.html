@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+
+{% block title %}
+  Departments
+{% endblock title %}
+{% block content %}
+
+    <div class="container mt-5">
+        <h1 class="offset-4">{{university.name}}</h1>
+    
+  
+
+<div class="row" >
+    {% for department in departments %}
+
+    <div class="container mt-2 col-12 ">
+        <a class="btn btn-primary " href="{% url 'course' department.id %}">{{department.name}}</a><br>
+    </div>
+      
+    {% endfor %}
+</div>
+</div>
+  
+{% endblock content %}
