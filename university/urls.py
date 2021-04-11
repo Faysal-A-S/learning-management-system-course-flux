@@ -9,6 +9,7 @@ urlpatterns = [
      path('course/<str:id>',views.courses, name='course'),
      path('lecture/<str:id>',views.lectures, name='lecture'),
      path('video/<str:number>',views.video,name='video'),
+     
  
 
 ]

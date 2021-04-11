@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app_users import views
+from university.views import aboutus
 from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls,name='admin'),
@@ -23,7 +24,8 @@ urlpatterns = [
     path('register/',views.register,name='register'),
     path('login/',views.login,name='login'),
     path('logout/',views.logout,name='logout'),
-    path('university/',include('university.urls'))
+    path('university/',include('university.urls')),
+    path('aboutus/',aboutus,name='aboutus')
 
 ]
 

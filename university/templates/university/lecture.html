@@ -23,20 +23,29 @@
     </div>
     {% else %}
     <div class="col col-2" style="margin-right: -10px;">
-      <button class="btn btn-success">{{lecture.lecture_name}} <span><i class="fas fa-star"></i></button>
+      <button onclick="myFunction()" class="btn btn-success paid">{{lecture.lecture_name}} <span><i class="fas fa-star"></i></button>
     </div>
     {% endif %}
     
     {% else %}
     <div class="col col-2" style="margin-right: -10px;">
-      <a class="btn btn-success" href="{% url 'video' lecture.id %}">{{lecture.lecture_name}}</a>
+      <a  class="btn btn-success"  href="{% url 'video' lecture.id %}">{{lecture.lecture_name}}</a>
     </div>
     {% endif %}
     {% endfor %}
-  
+   <p id="error"  style="color: rgb(40, 6, 192);">Sorry, you need to subscribe to get full playlist of this course. To subscribe to this course please contact with our Facebook page</p>
 </div>
 </div>
  
-    
+    <script>
+    function myFunction() {
+  var x = document.getElementById("error");
+  if (x.style.display == "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+    </script>
  
 {% endblock content %}

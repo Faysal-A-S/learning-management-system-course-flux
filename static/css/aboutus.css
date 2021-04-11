@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(19, 17, 17);
+    font-family: Verdana, sans-serif; margin:0
+}
+footer{
+  
+    background-color: #F0E68C;
+   
+    padding-top: 5px;
+    color: 		#35342f;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+}
+footer a:hover{
+    color: #000 !important;
+    font-weight: bolder;
+  }
+
+
+  .carousel-control-next {
+    right: 10%;
+    bottom: -80%;  
+  }
+  
+  .carousel-control-prev{
+    left: 50% !important; 
+    bottom: -80%;
+  }
+
+
+  
+  .carousel-indicators{
+    left: 42%;
+    bottom: -10%;
+  }
+  
+  .carousel-caption{
+    width: 40%;
+    left: 50%;
+  }
+  .cap{
+    color: #f7dd4a;
+    font-weight: bolder;
+  }
+  .text{
+    color: #ece497;
+  }
+

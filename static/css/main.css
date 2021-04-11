@@ -3,7 +3,7 @@ body{
     background-color: 	#F0E68C;
 }
 .navbar{
-    background-color: #100b14 !important;
+    background-color: #000 !important;
     
 }
 .navbar-brand {
@@ -35,7 +35,7 @@ body{
   
 #jumbotron{
     background: url("../image/jb2.jpg") no-repeat !important;
-    height: 20rem;
+    height: 500px;
     color: rgb(18, 18, 19);
 }
 
@@ -51,6 +51,7 @@ footer{
     width: 100%;
     
 }
+
 footer a:hover{
   color: #fddb1b !important;
 }
@@ -108,4 +109,10 @@ footer a:hover{
 
   .card-body{
     background-color: #d7caab;
+  }
+  .aboutus{
+    background-color: black;
+  }
+  #error{
+    display: none;
   }

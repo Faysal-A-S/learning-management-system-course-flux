@@ -26,8 +26,7 @@ def courses(request,id):
 def lectures(request,id) :
     lecture=Lecture.objects.filter(course=id).order_by('id')
     institute=Institute.objects.all()
-    for lec in lecture:
-            lec.id=str(random.randint(5000,9999))+str((lec.id))
+
     if request.user.is_authenticated:
         subscribe=Subscribe.objects.filter(user_id=request.user,course_id=id)
         if subscribe:
@@ -43,10 +42,25 @@ def lectures(request,id) :
                   'subscribe':subscribe.subscribed,
                   'institute':institute
                  }
+    else:
+        subscribe=Subscribe.objects.filter(user_id=6,course_id=id)
+        if subscribe:
+            context={
+                'lectures':lecture,
+                'subscribe':subscribe,
+                'institute':institute
+            }
+        else:
+            subscribe.subscribed=False    
+            context={
+                 'lectures':lecture,
+                  'subscribe':subscribe.subscribed,
+                  'institute':institute
+                 }             
     return render(request,'university/lecture.html',context)
+
 def video(request,number):
-    number=number[4:]
-    print(number)
+    
     video=Lecture.objects.filter(pk=number)
     institute=Institute.objects.all()
     for vid in video:
@@ -74,10 +88,42 @@ def video(request,number):
                      'subscribe':subscribe.subscribed,
                      'logo':logo,
                      'institute':institute
-                } 
+                }
+        else:
+            subscribe=Subscribe.objects.filter(user_id=6,course_id=vid.course)
+            logo='paid.jpg'
+            if subscribe:
+                
+                context={
+                     'video':video,
+                     'lectures':lecture,
+                     'subscribe':subscribe,
+                     'logo':logo,
+                     'institute':institute
+                }
+          
+            else:
+                subscribe.subscribed=False
+                context={
+                    'video':video,
+                     'lectures':lecture,
+                     'subscribe':subscribe.subscribed,
+                     'logo':logo,
+                     'institute':institute
+                }
+
                
        
         
         return render(request,'university/video.html',context)  
+
+
+
+def aboutus(request):
+    institute=Institute.objects.all()
+    context={
+        'institute':institute
+    }
+    return render(request,'university/aboutus.html',context)
         
 

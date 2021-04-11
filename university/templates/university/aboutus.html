@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+   
+
+
+    <title>
+      {% block title %}
+        About Us
+      {% endblock title %}
+    </title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'image/propic.png' %}" alt="logo" width="150" height="60" class="image-fluid">Course Flux</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             
+             
+              <li class="offset-1 nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Universities
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for ins in institute  %}
+                  <li><a class="dropdown-item " href="{% url 'department' ins.id %}">{{ins.name}}</a></li>
+                 
+                  {% endfor %}
+                  
+                  
+                </ul>
+              </li>
+
+              <li class="nav-item ">
+                <a class="nav-link text-nowrap" href="{% url 'aboutus' %}">About Us</a>
+              </li>
+             
+            </ul>
+                {% if user.is_authenticated %}
+                <p class="mt-2" style="color: aliceblue;">Logged in as <span id="user">{{user.username}}</span> </p>
+                <div>
+                   
+                    <a href="{% url 'logout'  %}" class="btn btn-primary">Logout</a>
+                </div>
+                {%  else  %}
+                <div>
+                    <a href="{% url 'login'  %}" class="btn btn-primary">Sign in</a>
+                    
+                    <a href="{% url 'register'  %}" class="btn btn-primary">Sign up</a>
+                </div>
+                {% endif %}
+                
+          </div>
+        </div>
+      </nav>
+      <div style="height: 500px" class="	scroll">
+
+
+
+
+
+
+
+
+
+        {% block content %}
+        <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel" data-bs-interval="false" >
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+
+            <div class="carousel-item active row" data-bs-interval="10">
+              <div class="col col-md-8 col-lg-6">
+                <img src="{% static 'image/1.png' %}" class=" w-75 " height="500px"  >
+              </div>
+              <div class="carousel-caption d-none d-md-block mb-5 ">
+                <h3 class="mb-5 cap">Who We Are:</h3>
+                <p class="text">We are a bunch of undergraduate students.  Constantly trying to make things a little bit easier, just like you.  The idea of CourseFlux came from facing difficulties when  understanding a topic before exam night, failing to manage enough time to take  preparation,  looking for a friend who will help us to understand that topic  which holding our confidence level for that course, hence fighting procrastination.</p>
+              </div>
+             
+            </div>
+
+            <div class="carousel-item row" data-bs-interval="10">
+              <div class="col col-md-8 col-lg-6">
+                <img src="{% static 'image/2.png' %}" class=" w-75" height="500px">
+              </div>
+              <div class="carousel-caption d-none d-md-block mb-5 ml-2">
+                <h3 class="cap">Our Vision:</h3>
+                <p class="text">With the mission of improving student’s lives through tutoring academic courses, CourseFlux is a Bangladeshi open  online undergraduate course provider aimed at professional  adults and university students. On this platform, you can find your undergraduate  program course lectures individually for every university in Bangladesh. The  content creator of those lectures, topics will be your varsity mate to make sure  you can get a comprehensible idea of your chosen course according to your varsity  curriculum.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item row" data-bs-interval="10">
+              <div class="col col-md-8 col-lg-6">
+                <img src="{% static 'image/3.png' %}" class=" w-75 " height="500px" >
+              </div>
+              <div class="carousel-caption d-none d-md-block  ml-2">
+                  <h3 class="cap">WHO ARE WE TRYING TO REACH: </h3>
+                  <p class="text">Since university students are diverse rather than school-college  students, a big portion of them are already maintaining  other things besides education. Some of them are professional  artists, interns, part-time workers, businessmen/ businesswomen, some are  even married, some of them are already raising kids besides completing their  graduation. So managing enough time to participate in everyday lectures and self-study  becomes tough for them. Hence CourseFlux is designed to help those undergraduate  students to cover their courses before exams by providing lectures  according to their university syllabus and prepare them for the exams of tomorrow.</p>
+
+                </div>
+              </div>
+
+               <div class="carousel-item row" data-bs-interval="10">
+              <div class="col col-md-8 col-lg-6">
+                <img src="{% static 'image/4.png' %}" class=" w-75 " height="500px" >
+              </div>
+              
+              <div class="carousel-caption d-none d-md-block mb-5 ml-2">
+                
+                
+                  <h3 class="cap">WHO ARE WE LOOKING FOR: </h3>
+                  <p class="text">If you think you mastered some of your undergraduate courses or if  you are that person, whom everyone seeks before exams to  understand any difficult topic. Then this is the perfect platform for you. CourseFlux always welcomes lecturers/content creators. Here you  can join as a lecturer/course content creator, earn money alongside helping  your friends, juniors by selling them your course lectures. Because we believe that, the amount of time, hardships, patience a student spends to master a subject or course  and then share with others should be valued.</p>
+               
+                
+              </div>
+            </div>
+
+     
+         </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        
+        {% endblock content %}
+
+
+
+
+
+
+
+
+      </div>
+      {% block footer %}
+      <footer class="footer">
+        <div class="row justify-content-center">
+          <div class="col-auto" style="margin-right: 30px;">
+            <h5>Our Contact :</h5>
+            <address class="address">
+              Need to contact us? <br> Then mail or call us at: <br>
+          <i class="fa fa-phone fa-lg"></i>:+8801845741414<br>
+          
+          <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:courseflux@gmail.com"  style="text-decoration:none;color:	#DAA520 ;">courseflux@gmail.com</a>
+       </address>
+        </div>
+        </div>
+        
+  
+        <div class="row justify-content-center">             
+          <div class="col-auto">
+              <p>© Copyright 2021 Course Flux</p>
+          </div>
+     </div>
+      </footer>
+  
+      {% endblock footer %}
+        
+  
+    
+  
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  </body>
+  </html>
+

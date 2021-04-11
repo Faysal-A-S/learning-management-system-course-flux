@@ -9,7 +9,7 @@
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>    
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> 
     <title>
       {% block title %}
@@ -42,7 +42,9 @@
                 </ul>
               </li>
 
-
+              <li class="nav-item ">
+                <a class="nav-link text-nowrap" href="{% url 'aboutus' %}">About Us</a>
+              </li>
              
             </ul>
                 {% if user.is_authenticated %}
@@ -66,15 +68,11 @@
       {% block content %}
       <div class="jumbotron jumbotron-fluid " style="margin-top: -10px;">
         <div  id="jumbotron">
-          <h1 class="display-4 fw-bold">First Ever University Based Online Platform in Bangladesh</h1>
-          <br>
-          <br>
-          <br>
-          <br>
+         
         </div>
       </div>
-      <div class="mt-2 row container">
-          <div class="offset-3 col-8 text-center" id="gred">
+      <div class="row container">
+          <div class="offset-3 col-8 text-center" style="margin-top: -110px;" >
             <h3>How it works?</h3>
             <p><i class="fas fa-arrow-right"></i>Register</p>
             <p><i class="fas fa-arrow-right"></i>Select your University</p>
@@ -85,30 +83,32 @@
       </div>
       {% endblock content %}
     </div>
-
-      <footer class="footer">
-        <div class="row justify-content-center">
-          <div class="col-auto" style="margin-left: 20px;">
-            <h5>Our Contact :</h5>
-            <address class="address">
-              Need to contact us? <br> Then mail or call us at: <br>
-          <i class="fa fa-phone fa-lg"></i>:01**********<br>
-          
-          <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:courseflux@gmail.com"  style="text-decoration:none;color:	#DAA520 ;">courseflux@gmail.com</a>
-       </address>
-        </div>
-        </div>
+    {% block footer %}
+    <footer class="footer">
+      <div class="row justify-content-center">
+        <div class="col-auto" style="margin-right: 30px;">
+          <h5>Our Contact :</h5>
+          <address class="address">
+            Need to contact us? <br> Then mail or call us at: <br>
+        <i class="fa fa-phone fa-lg"></i>:+8801845741414<br>
         
+        <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:courseflux@gmail.com"  style="text-decoration:none;color:	#DAA520 ;">courseflux@gmail.com</a>
+     </address>
+      </div>
+      </div>
+      
 
-        <div class="row justify-content-center">             
-          <div class="col-auto">
-              <p>© Copyright 2021 Course Flux</p>
-          </div>
-     </div>
-      </footer>
+      <div class="row justify-content-center">             
+        <div class="col-auto">
+            <p>© Copyright 2021 Course Flux</p>
+        </div>
+   </div>
+    </footer>
 
+    {% endblock footer %}
+      
 
-
+ 
 
    <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
