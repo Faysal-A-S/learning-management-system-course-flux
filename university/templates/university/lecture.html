@@ -19,7 +19,7 @@
     {% if lecture.premium %}
     {% if subscribe %}
     <div class="col col-2" style="margin-right: -10px;">
-      <a class="btn btn-success" href="{% url 'video' lecture.id %}">{{lecture.lecture_name}}</a>
+      <a class="btn btn-success" href="{% url 'video' lecture.lecture_id %}">{{lecture.lecture_name}}</a>
     </div>
     {% else %}
     <div class="col col-2" style="margin-right: -10px;">
@@ -29,7 +29,7 @@
     
     {% else %}
     <div class="col col-2" style="margin-right: -10px;">
-      <a  class="btn btn-success"  href="{% url 'video' lecture.id %}">{{lecture.lecture_name}}</a>
+      <a  class="btn btn-success"  href="{% url 'video' lecture.lecture_id %}">{{lecture.lecture_name}}</a>
     </div>
     {% endif %}
     {% endfor %}

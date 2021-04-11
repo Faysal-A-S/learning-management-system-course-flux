@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+import uuid
 # Create your models here.
 class Institute(models.Model):
     name=models.CharField( max_length=50)
@@ -40,9 +41,9 @@ class Course(models.Model):
 
 
 class Lecture(models.Model):
+    lecture_id=models.UUIDField(default=uuid.uuid4,unique=True,max_length=36)
     lecture_name=models.CharField( max_length=50)  
     dept=models.ForeignKey(Department,  on_delete=models.CASCADE) 
-    created_bt=models.ForeignKey(User, on_delete=models.CASCADE)
     created_at=models.DateTimeField( auto_now_add=True) 
     course=models.ForeignKey(Course, on_delete=models.CASCADE)
     slug=models.SlugField(null=True,blank=True)

@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'elearnsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'elearn',
+        'NAME':'elearnsite',
         'USER':'postgres',
         'PASSWORD':'helllord123',
         'HOST':'localhost'

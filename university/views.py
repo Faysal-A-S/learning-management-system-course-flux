@@ -61,7 +61,7 @@ def lectures(request,id) :
 
 def video(request,number):
     
-    video=Lecture.objects.filter(pk=number)
+    video=Lecture.objects.filter(lecture_id=number)
     institute=Institute.objects.all()
     for vid in video:
 
