@@ -31,6 +31,7 @@ body{
     color: rgb(22, 20, 20) !important;
     
 }
+
   
   
 #jumbotron{
@@ -45,10 +46,9 @@ footer{
    
     padding-top: 5px;
     color: 		#F0E68C;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    
+   
+    
     
 }
 
@@ -80,13 +80,15 @@ footer a:hover{
       font-weight: bolder;
       color: rgb(152, 59, 189);
   }
+ 
   .scroll{
-      height:70%;
+      height: 60vh;
       overflow-y: scroll;
   }
 
  
 ::-webkit-scrollbar {
+  
     width: 20px;
   }
   
@@ -116,3 +118,52 @@ footer a:hover{
   #error{
     display: none;
   }
+
+
+
+
+
+
+  @media screen and (max-width: 425px) {   
+    #jumbotron{
+      background: url("../image/resize-1619191427618745284425by500.jpg") no-repeat !important;
+      height: 500px;
+      color: rgb(18, 18, 19);
+    } 
+}
+
+@media screen and (min-width: 426px) {      
+  #jumbotron{      
+    background: url("../image/resize-16191918261891418955768by500.jpg") no-repeat !important;
+    height: 500px;
+    color: rgb(18, 18, 19);
+    } 
+} 
+@media (min-width: 1024px) {      
+  #jumbotron{        
+    background: url("../image/resize-1619191977388741281024by500.jpg") no-repeat !important;
+    height: 500px;
+    color: rgb(18, 18, 19);
+      } 
+}
+@media (min-width: 1025px) {    
+  #jumbotron{         
+    background: url("../image/resize-1619192149723707913jb2.jpg") no-repeat !important;
+    height: 500px;
+    color: rgb(18, 18, 19);
+     } 
+}
+@media (min-width: 1441px) {    
+  #jumbotron{         
+    background: url("../image/jb2.jpg") no-repeat !important;
+    height: 500px;
+    color: rgb(18, 18, 19);
+     } 
+}
+@media (min-width: 2560px) {    
+  #jumbotron{         
+    background: url("../image/resize-161919223614571684702560by500.jpg") no-repeat !important;
+    height: 500px;
+    color: rgb(18, 18, 19);
+     } 
+}

@@ -4,7 +4,7 @@
 {% endblock title %}
 {% block content %}
   
-<div class="container mt-5 ">
+<div class="container mt-5 mb-5 ">
   {% for lecture  in lectures %}
     
   {% if forloop.first %}
@@ -18,17 +18,17 @@
     {% for lecture in lectures  %}
     {% if lecture.premium %}
     {% if subscribe %}
-    <div class="col col-2" style="margin-right: -10px;">
+    <div class="col col-sm-12 col-md-4 col-lg-2" style="margin-right: -10px;">
       <a class="btn btn-success" href="{% url 'video' lecture.lecture_id %}">{{lecture.lecture_name}}</a>
     </div>
     {% else %}
-    <div class="col col-2" style="margin-right: -10px;">
+    <div class="col col-sm-12 col-md-4 col-lg-2" style="margin-right: -10px;">
       <button onclick="myFunction()" class="btn btn-success paid">{{lecture.lecture_name}} <span><i class="fas fa-star"></i></button>
     </div>
     {% endif %}
     
     {% else %}
-    <div class="col col-2" style="margin-right: -10px;">
+    <div class="col col-sm-12 col-md-4 col-lg-2" style="margin-right: -10px;">
       <a  class="btn btn-success"  href="{% url 'video' lecture.lecture_id %}">{{lecture.lecture_name}}</a>
     </div>
     {% endif %}

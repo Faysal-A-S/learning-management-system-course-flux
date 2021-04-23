@@ -20,6 +20,7 @@ footer a:hover{
   }
 
 
+    
   .carousel-control-next {
     right: 10%;
     bottom: -80%;  
@@ -49,3 +50,7 @@ footer a:hover{
     color: #ece497;
   }
 
+  .scroll{
+    height: 60vh;
+    overflow-y: scroll;
+}

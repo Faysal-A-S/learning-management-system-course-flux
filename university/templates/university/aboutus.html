@@ -24,11 +24,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'image/propic.png' %}" alt="logo" width="150" height="60" class="image-fluid">Course Flux</a>
+         
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon">
+              <i class="fas fa-bars" style="color:#fddb1b; font-size:28px;"></i>
+            </span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'image/propic.png' %}" alt="logo" width="150" height="60" class="image-fluid">Course Flux</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
              
              
@@ -68,7 +71,7 @@
           </div>
         </div>
       </nav>
-      <div style="height: 500px" class="	scroll">
+      <div class="	scroll">
 
 
 
@@ -92,7 +95,7 @@
               <div class="col col-md-8 col-lg-6">
                 <img src="{% static 'image/1.png' %}" class=" w-75 " height="500px"  >
               </div>
-              <div class="carousel-caption d-none d-md-block mb-5 ">
+              <div class="carousel-caption d-sm-block d-md-block col-sm-12 mb-5 ">
                 <h3 class="mb-5 cap">Who We Are:</h3>
                 <p class="text">We are a bunch of undergraduate students.  Constantly trying to make things a little bit easier, just like you.  The idea of CourseFlux came from facing difficulties when  understanding a topic before exam night, failing to manage enough time to take  preparation,  looking for a friend who will help us to understand that topic  which holding our confidence level for that course, hence fighting procrastination.</p>
               </div>
@@ -159,7 +162,7 @@
 
       </div>
       {% block footer %}
-      <footer class="footer">
+      <footer class="fixed-bottom">
         <div class="row justify-content-center">
           <div class="col-auto" style="margin-right: 30px;">
             <h5>Our Contact :</h5>
