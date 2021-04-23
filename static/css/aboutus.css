@@ -53,4 +53,17 @@ footer a:hover{
   .scroll{
     height: 60vh;
     overflow-y: scroll;
+    overflow-x: hidden;
+}
+.aboutimg{
+  height: 40vh;
+  width: 40vw;
+}
+
+.nav-link.active{
+  background-color: #f7dd4a !important; 
+  color: black !important;
+}
+.tabb{
+  border-color: #f7dd4a !important;
 }
